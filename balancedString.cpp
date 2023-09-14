@@ -18,7 +18,7 @@ In your solution, focus on "correctness". The performance of your solution will 
 #include <vector>
 #include <algorithm>
 
-int solution(std::string &S)
+int balancedString(std::string &S)
 {
     // Initialize frequency arrays for lowercase and uppercase letters
     std::vector<int> lowerFreq(26, 0);
@@ -107,10 +107,10 @@ int main()
     std::string S3 = "AcZCbaBz";
     std::string S4 = "abcdefghijklmnopqrstuvwxyz";
 
-    std::cout << solution(S1) << std::endl; // Should print 5
-    std::cout << solution(S2) << std::endl; // Should print -1
-    std::cout << solution(S3) << std::endl; // Should print 8
-    std::cout << solution(S4) << std::endl; // Should print -1
+    std::cout << balancedString(S1) << std::endl; // Should print 5
+    std::cout << balancedString(S2) << std::endl; // Should print -1
+    std::cout << balancedString(S3) << std::endl; // Should print 8
+    std::cout << balancedString(S4) << std::endl; // Should print -1
 
     return 0;
 }

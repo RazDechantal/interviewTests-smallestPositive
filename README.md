@@ -1,21 +1,4 @@
-Write a function:
-
-int solution(vector<int> &A);
-
-that, given an array A of N integers, returns the smallest positive integer (greater than 0) that does not occur in A.
-
-For example, given A = [1, 3, 6, 4, 1, 2], the function should return 5.
-
-Given A = [1, 2, 3], the function should return 4.
-
-Given A = [−1, −3], the function should return 1.
-
-Write an efficient algorithm for the following assumptions:
-
-N is an integer within the range [1..100,000];
-each element of array A is an integer within the range [−1,000,000..1,000,000].
-
-___________________________________________________________________________
+balancedString.cpp
 test02.cpp
 A string is called balanced when every letter occurring in the string, appears both in upper- and lowercase. For example, the string "CATattac" is balanced ('a', 'c' and 't' occur in both cases), but "Madam" is not ('d' and 'a' appear only in lowercase). Note that the number of occurrences does not matter.
 Write a function int solution(string &s);
@@ -31,7 +14,7 @@ N is an integer within the range [1,200]
 string S consists only of letters ('a'−'z' and/or 'A'−'Z').
 In your solution, focus on "correctness". The performance of your solution will not be the focus of the assessment.
 ___________________________________________________________________________
-Test02.cpp
+minDistIndices.cpp
 Integer V lies strictly  between integers U and W if U < V < W or if U > V > W.
 A non-empty array A consisting of N integers is given. A pair of indices (P, Q), where 0 ≤ P < Q < N, is said to have adjacent values  if no value in the array lies strictly between values A[P] and A[Q], and in addition A[P] ≠ A[Q].
 
@@ -71,7 +54,7 @@ Write an  algorithm for the following assumptions:
 - N is an integer within the range [1, 40000]
 - each element of array A is an integer within the range [−2,147,483,648, 2,147,483,647]
 ______________________________________________________________________________________
-test03
+battleship.cpp
 John plays a game of battleships with his friend Sonia. The game is played on a square map of N rows, numbered from 1 to N. Each row contains N cells, labeled with consecutive English upper-case letters ('A', 'B', 'C', etc.). Each cell is identified by a string composed of its row number followed by its column number: for example, "9C" denotes the third cell in the 9th row, and "15D" denotes the fourth cell in the 15th row.
 John marks the positions of all his ships on the map (which is not shown to Sonia). Ships are defined by rectangles with a maximum area of 4 cells. Sonia picks map cells to hit some ships. A ship is considered to be hit if at least one of its constituent cells is hit. If all of a ship's cells are hit, the ship is sunk.
 The goal is to count the number of sunk ships and the number of ships that have been hit but not sunk.
@@ -114,7 +97,7 @@ Assume that:
 In your solution, focus on correctness . The performance of your solution will not be the focus of the assessment.
 _______________________________________________________________________________________
 
-test04
+add5Atbeginning.cpp
 Write a function called solution that, given an integer N, returns the maximum possible value obtained by inserting one '5' digit inside the decimal representation of integer N.
 Examples:
 1. Given N = 268, the function should return 5268
@@ -122,19 +105,19 @@ Examples:
 3. Given N = 0, the function should return 50
 4. Given N = −999, the function should return −5999
 ______________________________________________________________________________________
-tes05
+generateString.cpp
 Write a function   that, given strings and  and integer , returns a string composed of the first two letters from each of name and surname followed by age. 
 . For example, given  name = "John" , surname = "Firelord" and age = 8, the function should return JoFi8
 ______________________________________________________________________________________
-test06
+signOfProduct.cpp
 Write a function that, given an array A of N integers (between −100 and 100), returns the sign (−1, 0, 1) of the product of all the numbers in the array multiplied together. Assume that N is between 1 and 1000.  For example, given A = [1, −2, −3, 5], the function should return 1 (the multiplication equals 30). 
  Given A = [1, 2, 3, −5] your function should return −1 (the multiplication equals −30). 
  Given A = [1, 2, 0, −5] your function should return 0 (the multiplication equals 0).  
 ______________________________________________________________________________________
-test07
+alternatingChar.cpp
 Write a function solution that returns a string of length N consisting of alternating characters: "+" and "-", starting with a "+" character. You can assume N is between 1 and 100.
 ______________________________________________________________________________________
-test08
+smallestPositiveInt
 A function that, given an array A of N integers, returns the smallest positive integer (greater than 0) that does not occur in A.
 
 For example, given A = [1, 3, 6, 4, 1, 2], the function should return 5.
@@ -148,5 +131,20 @@ Write an efficient algorithm for the following assumptions:
 N is an integer within the range [1..100,000];
 each element of array A is an integer within the range [−1,000,000..1,000,000].
 ______________________________________________________________________________________
+fizzbuzz.cpp
+Given a number n, for each integer i in the range from 1 to n inclusive, print one value per line as follows:
+If i is a multiple of both 3 and 5, print FizzBuzz.
+If i is a multiple of 3 (but not 5), print Fizz.
+If i is a multiple of 5 (but not 3), print Buzz.
+If i is not a multiple of 3 or 5, print the value of i.
+Function Description
+Complete the function fizzBuzz in the editor below.
+fizzBuzz has the following parameter(s):
+    int n:  upper limit of values to test (inclusive)
+Returns:    NONE
+Prints:
 
+    The function must print the appropriate response for each value i in the set {1, 2, ... n} in ascending order, each on a separate line.
+
+_________________________________________________________________________________________
 

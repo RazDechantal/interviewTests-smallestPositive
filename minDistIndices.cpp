@@ -44,37 +44,37 @@ Write an  algorithm for the following assumptions:
 #include <limits>
 #include <algorithm>
 
-int solution(std::vector<int> &A)
+int minDistIndices(std::vector<int> &A)
 {
-    std::unordered_map<int, std::vector<int>> valueIndices; // Maps values to their indices
-    int minDistance = std::numeric_limits<int>::max();      // Initialize to a large value
+  std::unordered_map<int, std::vector<int>> valueIndices; // Maps values to their indices
+  int minDistance = std::numeric_limits<int>::max();      // Initialize to a large value
 
-    for (int i = 0; i < A.size(); ++i)
+  for (int i = 0; i < A.size(); ++i)
+  {
+    if (valueIndices.find(A[i]) != valueIndices.end())
     {
-        if (valueIndices.find(A[i]) != valueIndices.end())
+      // If this value has been seen before, update the minimum distance
+      const std::vector<int> &indices = valueIndices[A[i]];
+      for (int j = 0; j < indices.size(); ++j)
+      {
+        int distance = i - indices[j];
+        if (distance < minDistance)
         {
-            // If this value has been seen before, update the minimum distance
-            const std::vector<int> &indices = valueIndices[A[i]];
-            for (int j = 0; j < indices.size(); ++j)
-            {
-                int distance = i - indices[j];
-                if (distance < minDistance)
-                {
-                    minDistance = distance;
-                }
-            }
+          minDistance = distance;
         }
-        valueIndices[A[i]].push_back(i); // Update the list of indices for the current value
+      }
     }
+    valueIndices[A[i]].push_back(i); // Update the list of indices for the current value
+  }
 
-    return (minDistance == std::numeric_limits<int>::max()) ? -1 : minDistance;
+  return (minDistance == std::numeric_limits<int>::max()) ? -1 : minDistance;
 }
 
 int main()
 {
-    std::vector<int> A = {1, 4, 7, 3, 3, 5};
-    int result = solution(A);
-    std::cout << "Minimum distance between adjacent indices with distinct values: " << result << std::endl; // Should print 2
+  std::vector<int> A = {1, 4, 7, 3, 3, 5};
+  int result = minDistIndices(A);
+  std::cout << "Minimum distance between adjacent indices with distinct values: " << result << std::endl; // Should print 2
 
-    return 0;
+  return 0;
 }

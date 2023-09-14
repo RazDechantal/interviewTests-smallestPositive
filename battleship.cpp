@@ -46,7 +46,7 @@ In your solution, focus on correctness . The performance of your solution will n
 #include <sstream>
 #include <map>
 
-std::string solution(int N, std::string &S, std::string &T)
+std::string battleship(int N, std::string &S, std::string &T)
 {
     std::map<std::string, int> ships;
     std::vector<std::string> hits;
@@ -120,19 +120,19 @@ int main()
     int N = 4;
     std::string S = "1B 2C,2D 4D";
     std::string T = "2B 2D 3D 4D 4A";
-    std::string result = solution(N, S, T);
+    std::string result = battleship(N, S, T);
     std::cout << result << std::endl; // Should print "1,1"
 
     N = 3;
     S = "1A 1B,2C 2C";
     T = "1B";
-    result = solution(N, S, T);
+    result = battleship(N, S, T);
     std::cout << result << std::endl; // Should print "0,1"
 
     N = 12;
     S = "1A 2A,12A 12A";
     T = "12A";
-    result = solution(N, S, T);
+    result = battleship(N, S, T);
     std::cout << result << std::endl; // Should print "1,0"
 
     return 0;

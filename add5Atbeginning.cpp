@@ -9,7 +9,7 @@ Examples:
 #include <iostream>
 #include <string>
 
-int solution(int N)
+int add5Atbeginning(int N)
 {
     // Convert N to a string
     std::string N_str = std::to_string(N);
@@ -49,10 +49,10 @@ int main()
     int N3 = 0;
     int N4 = -999;
 
-    std::cout << solution(N1) << std::endl; // Should print 5268
-    std::cout << solution(N2) << std::endl; // Should print 5670
-    std::cout << solution(N3) << std::endl; // Should print 50
-    std::cout << solution(N4) << std::endl; // Should print -5999
+    std::cout << add5Atbeginning(N1) << std::endl; // Should print 5268
+    std::cout << add5Atbeginning(N2) << std::endl; // Should print 5670
+    std::cout << add5Atbeginning(N3) << std::endl; // Should print 50
+    std::cout << add5Atbeginning(N4) << std::endl; // Should print -5999
 
     return 0;
 }

@@ -1,9 +1,10 @@
 /*
-Write a function solution that returns a string of length N consisting of alternating characters: "+" and "-", starting with a "+" character. You can assume N is between 1 and 100.
+Write a function solution that returns a string of length N consisting of alternating characters: "+" and "-",
+starting with a "+" character. You can assume N is between 1 and 100.
 */
 #include <string>
 
-std::string solution(int N)
+std::string alternatingChar(int N)
 {
     if (N <= 0)
     {
