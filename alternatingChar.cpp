@@ -3,6 +3,9 @@ Write a function solution that returns a string of length N consisting of altern
 starting with a "+" character. You can assume N is between 1 and 100.
 */
 #include <string>
+#include <iostream>
+
+using namespace std;
 
 std::string alternatingChar(int N)
 {
@@ -24,4 +27,10 @@ std::string alternatingChar(int N)
     }
 
     return result;
+}
+
+int main()
+{
+    cout << alternatingChar(20) << endl;
+    return 0;
 }
