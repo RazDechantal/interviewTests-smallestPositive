@@ -97,7 +97,7 @@ Assume that:
 In your solution, focus on correctness . The performance of your solution will not be the focus of the assessment.
 _______________________________________________________________________________________
 
-add5Atbeginning.cpp
+add5Atbeginning.cpp working
 Write a function called solution that, given an integer N, returns the maximum possible value obtained by inserting one '5' digit inside the decimal representation of integer N.
 Examples:
 1. Given N = 268, the function should return 5268
@@ -105,11 +105,11 @@ Examples:
 3. Given N = 0, the function should return 50
 4. Given N = −999, the function should return −5999
 ______________________________________________________________________________________
-generateString.cpp
+generateString.cpp working
 Write a function   that, given strings and  and integer , returns a string composed of the first two letters from each of name and surname followed by age. 
 . For example, given  name = "John" , surname = "Firelord" and age = 8, the function should return JoFi8
 ______________________________________________________________________________________
-signOfProduct.cpp
+signOfProduct.cpp 
 Write a function that, given an array A of N integers (between −100 and 100), returns the sign (−1, 0, 1) of the product of all the numbers in the array multiplied together. Assume that N is between 1 and 1000.  For example, given A = [1, −2, −3, 5], the function should return 1 (the multiplication equals 30). 
  Given A = [1, 2, 3, −5] your function should return −1 (the multiplication equals −30). 
  Given A = [1, 2, 0, −5] your function should return 0 (the multiplication equals 0).  

@@ -5,6 +5,10 @@ Write a function that, given an array A of N integers (between −100 and 100), 
 */
 
 #include <vector>
+#include <string>
+#include <iostream>
+
+using namespace std;
 
 int signOfProduct(std::vector<int> &A)
 {
@@ -33,7 +37,19 @@ int signOfProduct(std::vector<int> &A)
     }
     else
     {
-        // If product < 0 and there was at least one non-zero element, return -1
+        // If product < 0 and there was at least one non-zero
+        // element, return -1
         return hasZero ? 0 : -1;
     }
+}
+
+int main()
+{
+    vector<int> A = {1, 2, 3, -5};
+    vector<int> B = {1, 0, 3, -5};
+    vector<int> C = {-1, 2, 3, -5};
+    cout << signOfProduct(A) << endl;
+    cout << signOfProduct(B) << endl;
+    cout << signOfProduct(C) << endl;
+    return 0;
 }
