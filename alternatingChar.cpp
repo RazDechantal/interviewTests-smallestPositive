@@ -1,6 +1,6 @@
 /*
-Write a function solution that returns a string of length N consisting of alternating characters: "+" and "-",
-starting with a "+" character. You can assume N is between 1 and 100.
+Write a function solution that returns a string of length N consisting of alternating characters: "+"
+and "-", starting with a "+" character. You can assume N is between 1 and 100.
 */
 #include <string>
 #include <iostream>
@@ -31,6 +31,10 @@ std::string alternatingChar(int N)
 
 int main()
 {
+<<<<<<< Updated upstream
     cout << alternatingChar(20) << endl;
+=======
+    alternatingChar(20);
+>>>>>>> Stashed changes
     return 0;
 }

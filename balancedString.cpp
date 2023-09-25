@@ -21,15 +21,16 @@ In your solution, focus on "correctness". The performance of your solution will 
 #include <vector>
 #include <algorithm>
 
+using namespace std;
+
 int balancedString(std::string &S)
 {
     // Initialize frequency arrays for lowercase and uppercase letters
-    std::vector<int> lowerFreq(26, 0);
-    std::vector<int> upperFreq(26, 0);
+    std::vector<int> lowerFreq(26, 0); // Frequency array for lowercase letters
+    std::vector<int> upperFreq(26, 0); // Frequency array for uppercase letters
+    int totalCount = 0;                // Total count of letters in both cases
 
-    // Count the total number of letters in both cases
-    int totalCount = 0;
-
+    // Initialize the lowercase and uppercase frequency arrays
     for (char ch : S)
     {
         if (islower(ch))
@@ -43,30 +44,59 @@ int balancedString(std::string &S)
         totalCount++;
     }
 
-    // Initialize the answer to the total length of the string
-    int minLength = totalCount;
+    cout << "Lower:  ";
+    for (int c : lowerFreq)
+    {
+        if (c != '0')
+        {
+            cout << c << " - ";
+        }
 
-    // Initialize left and right pointers for the sliding window
+        /* code */
+    }
+    cout << endl;
+
+    cout << "Upper:  ";
+    for (int c : upperFreq)
+    {
+        if (c != '0')
+        {
+            cout << c << " - ";
+        }
+
+        /* code */
+    }
+    cout << endl;
+
+    // Initialize pointers for the sliding window
     int left = 0;
     int right = 0;
 
-    while (right < totalCount)
+    // Initialize the answer to a large value
+    int minLength = totalCount + 1;
+
+    // Iterate through the string
+    while (right < S.length())
     {
         char rightChar = S[right];
 
         // Expand the window by moving the right pointer
         if (islower(rightChar))
         {
+            cout << "lower, right char is: " << rightChar << " lowerFreq[rightChar - 'a'] --->" << lowerFreq[(int)rightChar - (int)'a'] << " rightChar is: " << (int)rightChar << " 'a' is: " << (int)'a' << endl;
             lowerFreq[rightChar - 'a']--;
+            cout << "lower, right char is: " << rightChar << " lowerFreq[rightChar - 'a'] --->" << lowerFreq[(int)rightChar - (int)'a'] << " rightChar is: " << (int)rightChar << " 'a' is: " << (int)'a' << endl;
         }
         else if (isupper(rightChar))
         {
+            cout << "Upper, right char: " << rightChar << " lowerFreq[rightChar - 'A'] --->" << upperFreq[rightChar - 'A'] << " rightChar is: " << (int)rightChar << " 'A' is: " << (int)'A' << endl;
             upperFreq[rightChar - 'A']--;
+            cout << "Upper, right char: " << rightChar << " lowerFreq[rightChar - 'A'] --->" << upperFreq[rightChar - 'A'] << " rightChar is: " << (int)rightChar << " 'A' is: " << (int)'A' << endl;
         }
+        cout << " ---------------------------" << endl;
 
         // Check if the window contains all letters in both cases
         bool isBalanced = true;
-
         for (int i = 0; i < 26; ++i)
         {
             if (lowerFreq[i] > 0 || upperFreq[i] > 0)
@@ -76,14 +106,13 @@ int balancedString(std::string &S)
             }
         }
 
+        // If the window is balanced, update the minimum length
         if (isBalanced)
         {
-            // If the window is balanced, update the minimum length
             minLength = std::min(minLength, right - left + 1);
 
             // Try to shrink the window by moving the left pointer
             char leftChar = S[left];
-
             if (islower(leftChar))
             {
                 lowerFreq[leftChar - 'a']++;
@@ -92,15 +121,14 @@ int balancedString(std::string &S)
             {
                 upperFreq[leftChar - 'A']++;
             }
-
             left++;
         }
 
         right++;
     }
 
-    // If minLength remains equal to the total length, there was no balanced fragment found
-    return (minLength == totalCount) ? -1 : minLength;
+    // If minLength remains greater than the initial value, there was a balanced fragment
+    return (minLength > totalCount) ? -1 : minLength;
 }
 
 int main()
@@ -111,9 +139,9 @@ int main()
     std::string S4 = "abcdefghijklmnopqrstuvwxyz";
 
     std::cout << balancedString(S1) << std::endl; // Should print 5
-    std::cout << balancedString(S2) << std::endl; // Should print -1
-    std::cout << balancedString(S3) << std::endl; // Should print 8
-    std::cout << balancedString(S4) << std::endl; // Should print -1
+    // std::cout << balancedString(S2) << std::endl; // Should print -1
+    // std::cout << balancedString(S3) << std::endl; // Should print 8
+    // std::cout << balancedString(S4) << std::endl; // Should print -1
 
     return 0;
 }
