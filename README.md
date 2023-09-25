@@ -1,4 +1,4 @@
-balancedString.cpp
+balancedString.cpp  working
 test02.cpp
 A string is called balanced when every letter occurring in the string, appears both in upper- and lowercase. For example, the string "CATattac" is balanced ('a', 'c' and 't' occur in both cases), but "Madam" is not ('d' and 'a' appear only in lowercase). Note that the number of occurrences does not matter.
 Write a function int solution(string &s);
@@ -14,7 +14,7 @@ N is an integer within the range [1,200]
 string S consists only of letters ('a'−'z' and/or 'A'−'Z').
 In your solution, focus on "correctness". The performance of your solution will not be the focus of the assessment.
 ___________________________________________________________________________
-minDistIndices.cpp
+minDistIndices.cpp working
 Integer V lies strictly  between integers U and W if U < V < W or if U > V > W.
 A non-empty array A consisting of N integers is given. A pair of indices (P, Q), where 0 ≤ P < Q < N, is said to have adjacent values  if no value in the array lies strictly between values A[P] and A[Q], and in addition A[P] ≠ A[Q].
 
@@ -66,10 +66,10 @@ Columns = [A,B,C,D]
 Rows = [1,2,3,4]
 The slots which are crossed makes the data set as such:
 The coordinates of the ship in a 4*4 matrix or data set 
-A = {(1,A),(1,B),(1,C),(1,4),
-         (2,A),(2,B),(2,C),(2,D),
-         (3,A),(3,B),(3,C),(3,D),
-         (4,A),(4,B),(4,C),(4,D)
+A = { (1,A),(1,B),(1,C),(1,D),
+      (2,A),(2,B),(2,C),(2,D),
+      (3,A),(3,B),(3,C),(3,D),
+      (4,A),(4,B),(4,C),(4,D)
 }
 
 We have two ships
