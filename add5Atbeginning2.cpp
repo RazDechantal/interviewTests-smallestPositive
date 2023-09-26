@@ -1,5 +1,6 @@
 /*
-Write a function called solution that, given an integer N, returns the maximum possible value obtained by inserting one '5' digit inside the decimal representation of integer N.
+Write a function called solution that, given an integer N, returns the value obtained by
+inserting one '5' digit at the left side of the integer N.
 Examples:
 1. Given N = 268, the function should return 5268
 2. Given N = 670, the function should return 5670

@@ -26,7 +26,7 @@ int add5Atbeginning(int N)
     {
         while (insert_pos < N_str.length() && N_str[insert_pos] >= max_digit)
         {
-            cout << insert_pos << " - checked for " << N_str[insert_pos] << " for: " << N << endl;
+            //  cout << insert_pos << " - checked for " << N_str[insert_pos] << " for: " << N << endl;
             //  cout << insert_pos << "-\t" << N_str[insert_pos];
             insert_pos++;
         }
@@ -58,7 +58,7 @@ int main()
     int N6 = 2147483647;
 
     std::cout << add5Atbeginning(N1) << std::endl; // Should print 5268
-    std::cout << add5Atbeginning(N2) << std::endl; // Should print 5670
+    std::cout << add5Atbeginning(N2) << std::endl; // Should print 6750
     std::cout << add5Atbeginning(N3) << std::endl; // Should print 50
     std::cout << add5Atbeginning(N4) << std::endl; // Should print -5999
     // std::cout << add5Atbeginning(N6) << std::endl; // Should print 52147483647

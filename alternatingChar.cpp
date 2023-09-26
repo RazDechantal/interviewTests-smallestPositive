@@ -31,10 +31,6 @@ std::string alternatingChar(int N)
 
 int main()
 {
-<<<<<<< Updated upstream
     cout << alternatingChar(20) << endl;
-=======
-    alternatingChar(20);
->>>>>>> Stashed changes
     return 0;
 }
