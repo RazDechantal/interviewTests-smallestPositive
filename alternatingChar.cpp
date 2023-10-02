@@ -11,7 +11,7 @@ std::string alternatingChar(int N)
 {
     if (N <= 0)
     {
-        return ""; // Return an empty string for invalid input
+        return "length = 0"; // Return an empty string for invalid input
     }
 
     std::string result;
@@ -31,6 +31,13 @@ std::string alternatingChar(int N)
 
 int main()
 {
-    cout << alternatingChar(20) << endl;
+    std::string res;
+
+    for (int i = 0; i < 10; i++)
+    {
+        res = alternatingChar(i);
+        cout << res << endl;
+    }
+
     return 0;
 }

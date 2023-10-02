@@ -25,23 +25,6 @@ string sExpression(const string &nodes)
     return result;
 }
 
-int main()
-{
-    ofstream fout(getenv("OUTPUT_PATH"));
-
-    string nodes = "(B,D) (D,E) (A,B) (C,F) (E,G) (A,C)";
-    // getline(cin, nodes);
-
-    string result = sExpression(nodes);
-
-    cout << result;
-    fout << result << "\n";
-
-    fout.close();
-
-    return 0;
-}
-
 bool parseInputs(string input, map<char, vector<char>> &adjList, map<char, int> &numParents, char &root)
 {
     char parent;
@@ -153,4 +136,29 @@ void lexiSExpressionPrint(map<char, vector<char>> adjList, char current)
         }
     }
     cout << ")";
+}
+
+int main()
+{
+    ofstream fout("tree3.txt");
+
+    string nodes = "(B,D) (D,E) (A,B) (C,F) (E,G) (A,C)";
+
+    // string nodes = "(A,B) (A,C) (B,D) (D,C)";
+    //  getline(cin, nodes);
+
+    string result = sExpression(nodes);
+
+    cout << result << endl;
+
+    nodes = "(A,B) (A,C) (B,D) (D,C)";
+    result = sExpression(nodes);
+
+    cout << result << endl;
+
+    fout << result << "\n";
+
+    fout.close();
+
+    return 0;
 }

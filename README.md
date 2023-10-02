@@ -148,3 +148,255 @@ Prints:
 
 _________________________________________________________________________________________
 
+disk.cpp working
+Task description
+There are three stacks of disks. Disks on each stack are sorted by size in increasing order from the bottom to the top.
+
+Our goal is to move all disks from these stacks onto the fourth stack, which is initially empty. In one move the top element of one of the stacks can be moved to the fourth stack. After moving all disks onto the fourth stack, they should be sorted by size in decreasing order from bottom to the top.
+
+You are given three arrays: stack1 of N1 integers, stack2 of N2 integers, and stack3 of N3 integers. Each array represents a stack in which the elements are listed from bottom to top (i.e. the last element of the array is the top element of the stack).
+
+Find the sequence of moves after which all the disks will be on the fourth stack, sorted by size in descending order. You may assume that there are no two disks of the same size.
+
+For example for stack1 = [2, 7], stack2 = [4, 5] and stack3 = [1], the sequence of moves is 1−2−2−1−3:
+
+move disk of size 7 from stack 1
+move disk of size 5 from stack 2
+move disk of size 4 from stack 2
+move disk of size 2 from stack 1
+move disk of size 1 from stack 3
+After these moves the elements of the fourth stack are sorted in descending order: [7, 5, 4, 2, 1] and all other stacks are empty.
+
+Write a function:
+
+string solution(vector<int> &stack1, vector<int> &stack2, vector<int> &stack3);
+
+that, given three arrays, stack1, stack2 and stack3, returns a string representing the sequence of moves which should be performed. The J-th character of the string should be the stack number (1, 2 or 3) from whose top the element should be moved in the J-th move.
+
+Examples:
+
+1. Given stack1 = [2, 7], stack2 = [4, 5] and stack3 = [1], the function should return "12213", as explained above.
+
+2. Given stack1 = [10, 20, 30], stack2 = [8] and stack3 = [1], the function should return "11123".
+
+3. Given stack1 = [7], stack2 = [] and stack3 = [9], the function should return "31".
+
+Assume that:
+
+N1, N2 and N3 are integers within the range [0..100];
+each element of arrays stack1, stack2 and stack3 is an integer within the range [1..1,000];
+disk sizes are unique, i.e. there are no two disks of the same size;
+on each stack disks are sorted by size in ascending order.
+In your solution, focus on correctness. The performance of your solution will not be the focus of the assessment.
+________________________________________________________________________________
+maxSumOf2Int.cpp working
+Task description
+There is an array A consisting of N integers. What is the maximum sum of two integers from A that share their first and last digits? For example, 1007 and 167 share their first (1) and last (7) digits, whereas 2002 and 55 do not.
+
+Write a function:
+
+class Solution { public int solution(int[] A); }
+
+that, given an array A consisting of N integers, returns the maximum sum of two integers that share their first and last digits. If there are no two integers that share their first and last digits, the function should return −1.
+
+Examples:
+
+1. Given A = [130, 191, 200, 10], the function should return 140. The only integers in A that share first and last digits are 130 and 10.
+
+2. Given A = [405, 45, 300, 300], the function should return 600. There are two pairs of integers that share first and last digits: (405, 45) and (300, 300). The sum of the two 300s is bigger than the sum of 405 and 45.
+
+3. Given A = [50, 222, 49, 52, 25], the function should return −1. There are no two integers that share their first and last digits.
+
+4. Given A = [30, 909, 3190, 99, 3990, 9009], the function should return 9918.
+
+Write an efficient algorithm for the following assumptions:
+
+N is an integer within the range [1..100,000];
+each element of array A is an integer within the range [10..1,000,000,000].
+
+__________________________________________________________________
+tree3.cpp working
+For the problem of tree, we need solution which fullfil the following description:
+A binary tree is represented as a sequence of parent-child pairs, for example:
+(A,B) (A,C) (B,G) (C,H) (E,F) (B,D) (C,E)
+A tree with those edges may be illustrated in many ways. 
+The following is a recursive definition for the S-expression of a tree:
+
+S-exp(node) = ( node->val (S-exp(node->first_child))(S-exp(node->second_child))), if node != NULL = "", node == NULL
+where, first_child->val < second_child->val (first_child->val is lexicographically smaller than second_child-> val)
+
+This tree can be represented in an S-expression in multiple ways. The lexicographically smallest way of expressing it is as follows:
+
+(A(B(D)(G))(C(E(F))(H)))
+Translate the node-pair representation into its lexicographically smallest S-expression or report any errors that do not conform to the definition of a binary tree.
+The list of errors with their codes is as follows:
+Error Code      Type of error
+
+E1                 More than 2 children
+
+E2                 Duplicate Edges
+
+E3                 Cycle present (node is direct descendant of more than one node)
+
+E4                 Multiple roots
+
+E5                 Any other error   
+
+Function Description 
+
+Complete the function sExpression in the editor below. The function must return either the lexicographically lowest S-expression or the lexicographically lowest error code as a string.
+sExpression has the following parameter(s):
+
+    nodes:  a string of space-separated parenthetical elements, each of which contains the names of two connected nodes separated by a comma
+
+Constraints:
+
+All node names are single characters in the range ascii[A-Z]
+The maximum node count is 26.
+There is no specific order to the input (parent, child) pairs.
+If you have not worked with trees when programming before then the following may be helpful. A tree can be stored in memory as a map from parents to each of their children. For example, if { K: V } indicates an item in a dictionary or hashmap with key K and value V, and [X, Y] indicates a list or array with elements X and Y, then the example tree could be stored as:
+
+{
+
+    A: [B, C]
+
+    B: [D, G]
+
+    C: [E, H]
+
+    D: []
+
+    E: [F]
+
+    F: []
+
+    G: []
+
+    H: []
+
+}
+
+
+
+This is not the only way to store a tree, nor is it necessarily the best way in all cases, however it will be sufficient to solve the problem given to you.
+
+Sample case:
+Sample Input 0
+(B,D) (D,E) (A,B) (C,F) (E,G) (A,C)
+ 
+
+Sample Output 0
+(A(B(D(E(G))))(C(F)))
+
+
+Sample Input 1
+(A,B) (A,C) (B,D) (D,C)
+ 
+Sample Output 1
+E3
+
+The program has already the main() function as following:
+nt main()
+{
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    string nodes;
+    getline(cin, nodes);
+
+    string result = sExpression(nodes);
+
+    fout << result << "\n";
+
+    fout.close();
+
+    return 0;
+
+}
+
+________________________________________________________________________________________
+path.cpp working
+For the Problem "Paths in a warehouse" we need a solution for the following problem:
+A forklift worker moves products from one place to the other in an automotive parts warehouse. There a map in the dashboard that shows, in real time, the open and blocked sections inside the warehouse. The map is displayed as an n x m matrix of 1's and 0's which represent open and blocked sections respectively. A forklift driver always starts at the upper left corner of the map at warehouse[0][0] and tries to reach the bottom right section of the map or warehouse[n-1][m-1].  Each movement must be in increasing value along a row or column but not both.  Given the warehouse map, determine the number of distinct paths to get from warehouse[0][0] to warehouse[n-1][m-1].  The number may be large, so return the value modulo (109+7).
+Example
+warehouse = [1, 1, 0, 1], [1, 1, 1, 1]
+The matrix below is drawn from the warehouse array showing open and blocked sections of the warehouse. 1 indicates an open section and 0 indicates a blocked section. It is only possible to travel through open sections, so no path can go through the section at (0, 2).
+
+There are 2 possible paths from warehouse[0][0] to warehouse[1][3] and 2 modulo (109+7) = 2.
+Function Description
+Complete the function numPaths in the editor below.
+numPaths has the following parameter(s):
+    warehouse[n][m]:  a two dimensional array of integers of n rows and m columns
+
+Returns:
+    int: the number of paths through the matrix, modulo (109 + 7).
+Constraints
+
+1 ≤ n, m ≤ 1000
+Each cell in matrix a contains either a 0 or a 1.
+Input Format for Custom Testing
+Input from stdin will be processed as follows and passed to the function.
+The first line contains an integer n, the number of rows in the matrix warehouse.
+
+The next line contains an integer m, the number of columns in the matrix warehouse.
+
+The next n lines each contain a string warehouse[i] where 0 ≤ i < n and |warehouse[i]| = m.
+
+Sample Case 0
+Sample Input 0
+
+STDIN       Function
+-----       --------
+3       →   warehouse[][] size n=3 m=4 
+4 
+1 1 1 1 →   warehouse = [[1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1]]
+1 1 1 1  
+1 1 1 1 
+Sample Output 0
+
+10
+Explanation 0
+
+There are 10 possible paths from warehouse[0][0] to warehouse[2][3] and 10 modulo (109 +7) = 10.
+
+Sample Case 1
+Sample Input 1
+
+STDIN      Function
+-----      --------
+2      →   warehouse[][] size n=2 m=2
+2
+1 1    →   warehouse = [[1, 1], [0, 1]]
+0 1      
+Sample Output 1
+
+1
+Explanation 1
+
+There is 1 possible path from warehouse[0][0] to warehouse[1][1] and 1 modulo (109 + 7) = 1.
+
+________________________________________________________________________________
+
+groupDivision.cpp working
+1. Group Division (Collab UK Version)
+A university has admitted a group of n students with varying skill levels. To better accommodate the students, the university has decided to create classes tailored to the skill levels. A placement examination will return a skill level that will be used to group the students, where levels[i] represents the skill level of student i. All students within a group must have a skill level within maxSpread, a specified range of one another. Determine the minimum number of classes that must be formed.
+Example
+n = 5
+levels = [1, 4, 7, 3, 4]
+maxSpread = 2 
+The students in any group must be within maxSpread = 2 levels of each other. In this case, one optimal grouping is (1, 3), (4, 4), and (7). Another possible grouping is (1), (3, 4, 4), (7).  There is no way to form fewer than 3 groups.
+Function Description
+Complete the function groupDivision in the editor below.
+groupDivision has the following parameter(s):
+
+    int levels[n]:  the skill level for each student
+    int maxSpread:  the maximum allowed skill level difference between any two members of a group
+
+Returns
+    int: the minimum number of groups that can be formed
+Constraints
+
+1 ≤ n ≤ 105
+1 ≤ levels[i] ≤ 109 for every i (where 0 ≤ i ≤ n-1)
+0 ≤ maxSpread ≤ 109
+___________________________________________________________________________________
+

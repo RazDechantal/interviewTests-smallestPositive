@@ -20,7 +20,7 @@ char isBalanced(char letter, int index, std::string S, bool isUpper)
                 if (tolower(letter) == S[i])
                 {
                     response = letter;
-                    cout << "Response upper: " << response << endl;
+                    // cout << "Response upper: " << response << endl;
                 }
             }
             else
@@ -28,7 +28,7 @@ char isBalanced(char letter, int index, std::string S, bool isUpper)
                 if (toupper(letter) == S[i])
                 {
                     response = letter;
-                    cout << "Response lower: " << response << endl;
+                    // cout << "Response lower: " << response << endl;
                 }
             }
         }
@@ -58,11 +58,12 @@ int balancedString(std::string S)
             if (!stringShortest.empty() && stringShortest.length() > 1)
             {
                 listPatterns.push_back(stringShortest);
-                cout << "listPatterns: " << i << listPatterns[i] << endl;
+                // cout << "listPatterns: " << i << listPatterns[i] << endl;
             }
             stringShortest = "";
         }
     }
+    std::cout << "string: " << stringShortest << " with Length: " << stringShortest.length() << " was added!" << std::endl;
 
     if (!stringShortest.empty() && stringShortest.length() > 1 && listPatterns.empty())
     {
@@ -74,12 +75,12 @@ int balancedString(std::string S)
         stringShortest = *std::max_element(listPatterns.begin(), listPatterns.end());
     }
 
-    for (string s : listPatterns)
-    {
-        cout << "s: " << S << endl;
-    }
-    cout << "Size: " << listPatterns.size() << endl;
-    // cout << "shortest: " << stringShortest << endl;
+    // for (string s : listPatterns)
+    // {
+    //     cout << "s: " << S << endl;
+    // }
+    // cout << "Size: " << listPatterns.size() << endl;
+    cout << "shortest: " << stringShortest << endl;
 
     return listPatterns.size() >= 1 ? stringShortest.length() : -1;
 }
@@ -91,7 +92,7 @@ int main()
     std::string S3 = "AcZCbaBz";
     std::string S4 = "abcdefghijklmnopqrstuvwxyz";
 
-    std::cout << "Result: " << balancedString(S3) << std::endl;
+    std::cout << "Result: " << balancedString(S1) << std::endl;
     // std::cout << "Result: " << balancedString(S2) << std::endl;
     // std::cout << "Result: " << balancedString(S3) << std::endl;
     // std::cout << "Result: " << balancedString(S4) << std::endl;
