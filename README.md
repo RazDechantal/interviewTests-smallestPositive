@@ -399,4 +399,99 @@ Constraints
 1 ≤ levels[i] ≤ 109 for every i (where 0 ≤ i ≤ n-1)
 0 ≤ maxSpread ≤ 109
 ___________________________________________________________________________________
+foundB.cpp working
+Task description
+Write a function solution that, given a string S consisting of N letters 'a' and/or 'b' returns true when all occurrences of letter 'a' are before all occurrences of letter 'b' and returns false otherwise.
 
+Examples:
+
+1. Given S = "aabbb", the function should return true.
+
+2. Given S = "ba", the function should return false.
+
+3. Given S = "aaa", the function should return true. Note that 'b' does not need to occur in S.
+
+4. Given S = "b", the function should return true. Note that 'a' does not need to occur in S.
+
+5. Given S = "abba", the function should return false.
+
+Write an efficient algorithm for the following assumptions:
+
+N is an integer within the range [1..300,000];
+string S is made only of the characters 'a' and/or 'b'.
+
+_____________________________________________________________________________________
+Standard bitwise operation: largestSubsetAnd.cpp working
+
+Task description
+AND is a standard bitwise operation. For example, given K = 12 (binary representation 01100) and L = 21 (binary representation 10101) we obtain:
+
+01100 AND
+10101 =
+_______
+
+00100
+
+The AND operation can be extended to N integers, for example:
+01100 AND
+10101 AND
+00100 =
+_______
+
+00100
+
+Because AND of 01100 (first argument) and 10101 (second argument) is 00100, and AND of this number with 00100 (third argument) is also 00100.
+Write a function:
+int solution(vector<int> &A);
+
+that, given an array A consisting of N integers, returns the size of the largest possible subset of A such that AND of all its elements is greater than 0.
+
+Examples:
+
+1. Given A = [13, 7, 2, 8, 3] your function should return 3.
+
+We can pick subset 13, 7 and 3. AND of these elements is positive and it is the largest possible subset of numbers that fulfills the criteria.
+
+1101 (13) AND
+0111 (7) AND
+0011 (3) =
+_______
+
+0001 (1)
+
+2. Given A = [1, 2, 4, 8] your function should return 1. The AND of each pair from the array is equal to 0.
+
+3. Given A = [16, 16] your function should return 2. The AND of both numbers is 16.
+
+Write an efficient algorithm for the following assumptions:
+
+N is an integer within the range [1..100,000];
+each element of array A is an integer within the range [1..1,000,000,000].
+Remember, all submissions are being checked for plagiarism. Your recruiter will be informed in case suspicious activity is detected.
+___________________________________________________________________________________
+periodNewest.cpp working
+Task description
+Consider a non-empty string S = S[0]S[1]...S[Q-1] consisting of Q characters. The period of this string is the smallest positive integer P such that:
+
+P ≤ Q / 2 and
+S[K] = S[K+P] for every K, where 0 ≤ K < Q − P.
+For example, 8 is the period of "codilitycodilityco" and 7 is the period of "abracadabracadabra".
+
+A positive integer M is the binary period of a positive integer N if M is the period of the binary representation of N.
+
+For example, 4 is the binary period of 955, because the binary representation of 955 is "1110111011" and its period is 4.
+
+You are given an implementation of a function:
+
+int solution(int N);
+
+This function, when given a positive integer N, returns the binary period of N. The function returns −1 if N does not have a binary period.
+
+For example, given N = 955 the function returns 4, as explained in the example above.
+
+The attached code is still incorrect for some inputs. Despite the error(s), the code may produce a correct answer for the example test cases. The goal of the exercise is to find and fix the bug(s) in the implementation. You can modify at most two lines.
+
+Assume that:
+
+N is an integer within the range [1..1,000,000,000].
+In your solution, focus on correctness. The performance of your solution will not be the focus of the assessment.
