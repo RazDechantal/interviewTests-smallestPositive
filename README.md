@@ -421,7 +421,7 @@ N is an integer within the range [1..300,000];
 string S is made only of the characters 'a' and/or 'b'.
 
 _____________________________________________________________________________________
-Standard bitwise operation: largestSubsetAnd.cpp working
+Standard bitwise operation: largestSubsetAnd.cpp working, understood
 
 Task description
 AND is a standard bitwise operation. For example, given K = 12 (binary representation 01100) and L = 21 (binary representation 10101) we obtain:
