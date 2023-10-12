@@ -49,7 +49,8 @@ int solution(std::vector<int> &A)
 int main()
 {
     // Test cases
-    std::vector<int> A1 = {13, 7, 2, 8, 3};
+    // std::vector<int> A1 = {13, 7, 2, 8, 3};
+    std::vector<int> A1 = {1, 2, 3, 4, 5, 6, 7, 8};
     std::vector<int> A2 = {1, 2, 4, 8};
     std::vector<int> A3 = {16, 16};
 
