@@ -495,3 +495,81 @@ Assume that:
 
 N is an integer within the range [1..1,000,000,000].
 In your solution, focus on correctness. The performance of your solution will not be the focus of the assessment.
+
+____________________________________________________________________________________________
+coins.cpp working
+
+Write a solution in C++ for the following task:
+
+Task description
+There are N coins, each showing either heads or tails. We would like all the coins to show the same face. What is the minimum number of coins that must be reversed?
+
+Write a function:
+
+int solution(vector<int> &A);
+
+that, given an array A consisting of N integers representing the coins, returns the minimum number of coins that must be reversed. Consecutive elements of array A represent consecutive coins and contain only a 0 (heads) or a 1 (tails).
+
+For example, given array A = [1, 0, 0, 1, 0, 0], there are four coins showing heads and two coins showing tails. The function should return 2, as after reversing two coins (in positions 0 and 3), all the coins will be showing the same face (heads).
+
+Assume that:
+
+N is an integer within the range [1..100];
+each element of array A is an integer that can have one of the following values: 0, 1.
+In your solution, focus on correctness. The performance of your solution will not be the focus of the assessment.
+
+Copyright 2009–2023 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.
+
+____________________________________________________________________________________________________
+game of Rock-Paper-Scissors
+rockPaperScisor.cpp working
+
+Please write a solution in c++ for the following task. The solution must be accompanied by a main() function in which the examples in the task could be tested.
+
+Task description
+Franco is going to play a game of Rock-Paper-Scissors with his friend Giovanni. In each turn, both players make their chosen gesture (rock, paper or scissors) simultaneously. After every turn, players gain points as follows: 2 for a win (rock beats scissors, scissors beat paper and paper beats rock), 1 for a tie (when both players show the same gesture) and 0 for a loss.
+
+Franco wants to surprise Giovanni by using a very simple strategy: he will make the same gesture in every turn throughout the game. What is the maximum number of points he can score using this strategy?
+
+Write a function:
+
+int solution(string &G);
+
+that, given a string G representing the sequence of Giovanni's turns ('R' represents a rock, 'P' represents paper and 'S' represents scissors), returns the maximum number of points Franco can score using his strategy.
+
+For example:
+
+Given "RSPRS", the function should return 6 (with the chosen gesture being rock). Franco will gain 6 points (he will win in the second and fifth turns and tie in the first and fourth turn).
+Given "SRR" the function should return 4 (chosen gesture: rock; he will win in the first turn and tie in the second and third turns).
+Given "PRPRRPP" the function should return 10 (chosen gesture: paper).
+Given "PPPPRRSSSSS" the function should return 13 (chosen gesture: scissors).
+Assume that:
+
+the length of string G is within the range [1..100];
+string G consists only of letters 'R', 'P', and 'S'.
+In your solution, focus on correctness. The performance of your solution will not be the focus of the assessment.
+
+_____________________________________________________________________________________________________
+Convert seconds to hours, Minutes, seconds
+timeinSecGame.cpp working
+
+Please write a solution in c++ for the following task. The solution must be accompanied by a main() function in which the examples in the task could be tested.
+
+Task description
+Myung has a fancy application on her mobile, which shows her the time not in hours, minutes and seconds but only in seconds. She is in a bit of a hurry and she needs your help to convert the output of this application into a readable format.
+
+Write a function:
+
+string solution(int T);
+
+that, given a time T in seconds, converts it into a string in the format "<<hours>>h<<minutes>>m<<seconds>>s".
+
+For example, given T=7500 the function should return 2h5m0s.
+
+Given T=83643 the function should return 23h14m3s.
+
+Assume that:
+
+T is an integer within the range [0..86,399].
+In your solution, focus on correctness. The performance of your solution will not be the focus of the assessment.
+
