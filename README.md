@@ -573,3 +573,86 @@ Assume that:
 T is an integer within the range [0..86,399].
 In your solution, focus on correctness. The performance of your solution will not be the focus of the assessment.
 
+___________________________________________________________________________________
+maxEvenSumPairs ´partially working. It works not for:
+A1 = [4, 2, 5, 8, 7, 3, 7]
+sol = Solution()
+print(sol.solution(A1))  # Expected output: 2 
+
+Task description
+You are given N numbers on a circle, described by an array A. Find the maximum number of neighbouring pairs whose sums are even. One element can belong to only one pair.
+
+Write a function:
+
+class Solution { public int solution(int[] A); }
+
+that, given an array A consisting of N integers, returns the maximum number of neighbouring pairs whose sums are even.
+
+Examples:
+
+1. Given A = [4, 2, 5, 8, 7, 3, 7], the function should return 2. We can create two pairs with even sums: (A[0], A[1]) and (A[4], A[5]). Another way to choose two pairs is: (A[0], A[1]) and (A[5], A[6]).
+
+2. Given A = [14, 21, 16, 35, 22], the function should return 1. There is only one qualifying pair: (A[0], A[4]).
+
+3. Given A = [5, 5, 5, 5, 5, 5], the function should return 3. We can create three pairs: (A[0], A[5]), (A[1], A[2]) and (A[3], A[4]).
+
+Write an efficient algorithm for the following assumptions:
+
+N is an integer within the range [1..100,000];
+each element of array A is an integer within the range [0..1,000,000,000].
+
+________________________________________________________________________
+
+encodeBinary.cpp partially working. Does not work for  std::string S4(400000, '1');
+The Python version (encodeBinary.py) works.
+
+Task description
+You are given a string S of length N which encodes a non-negative number V in a binary form. Two types of operations may be performed on it to modify its value:
+
+if V is odd, subtract 1 from it;
+if V is even, divide it by 2.
+These operations are performed until the value of V becomes 0.
+
+For example, if string S = "011100", its value V initially is 28. The value of V would change as follows:
+
+V = 28, which is even: divide by 2 to obtain 14;
+V = 14, which is even: divide by 2 to obtain 7;
+V = 7, which is odd: subtract 1 to obtain 6;
+V = 6, which is even: divide by 2 to obtain 3;
+V = 3, which is odd: subtract 1 to obtain 2;
+V = 2, which is even: divide by 2 to obtain 1;
+V = 1, which is odd: subtract 1 to obtain 0.
+Seven operations were required to reduce the value of V to 0.
+
+Write a function:
+
+int solution(string &S);
+
+that, given a string S consisting of N characters containing a binary representation of the initial value V, returns the number of operations after which its value will become 0.
+
+Examples:
+
+1. Given S = "011100", the function should return 7. String S represents the number 28, which becomes 0 after seven operations, as explained above.
+
+2. Given S = "111", the function should return 5. String S encodes the number V = 7. Its value will change over the following five operations:
+
+V = 7, which is odd: subtract 1 to obtain 6;
+V = 6, which is even: divide by 2 to obtain 3;
+V = 3, which is odd: subtract 1 to obtain 2;
+V = 2, which is even: divide by 2 to obtain 1;
+V = 1, which is odd: subtract 1 to obtain 0.
+3. Given S = "1111010101111", the function should return 22.
+
+4. Given string S consisting of "1" repeated 400,000 times, the function should return 799,999.
+
+Write an efficient algorithm for the following assumptions:
+
+string S is made only of the characters '0' and/or '1';
+N, which is the length of string S, is an integer within the range [1..1,000,000];
+the binary representation is big-endian, i.e. the first character of string S corresponds to the most significant bit;
+the binary representation may contain leading zeros.
+
+______________________________________________________________________________
+
+
+
